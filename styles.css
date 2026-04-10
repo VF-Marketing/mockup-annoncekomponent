@@ -1,7 +1,7 @@
 :root {
   --color-beige: #f2e5d5;
   --color-wine: #46143d;
-  --color-text: #4b2f2b;
+  --color-text: #001a06;
   --color-surface: #ffffff;
   --color-border: rgba(70, 20, 61, 0.12);
   --color-shadow: rgba(70, 20, 61, 0.16);
@@ -60,7 +60,7 @@ a {
 
 .bg-beige-light {
   background-color: var(--color-beige);
-  color: var(--color-wine);
+  color: var(--color-text);
 }
 
 .frontpage-adverts {
@@ -235,7 +235,7 @@ a {
   margin: 0;
   font-size: 1.55rem;
   line-height: 1.05;
-  color: var(--color-wine);
+  color: var(--color-text);
 }
 
 .card-manchet,
@@ -255,6 +255,7 @@ a {
 .card-dates {
   grid-area: dates;
   white-space: nowrap;
+  color: var(--color-text);
 }
 
 .card-bottom-content {
@@ -287,9 +288,11 @@ a {
 .card-price {
   grid-area: price;
   margin: 0.2rem 0 0;
-  font-size: 1.65rem;
+  font-size: 1.15rem;
   line-height: 1;
-  color: var(--color-wine);
+  color: var(--color-text);
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
   white-space: nowrap;
 }
 
