@@ -29,7 +29,7 @@ carousels.forEach((carousel) => {
       return 1;
     }
 
-    return 4;
+    return 3;
   };
 
   const getMaxIndex = () => {

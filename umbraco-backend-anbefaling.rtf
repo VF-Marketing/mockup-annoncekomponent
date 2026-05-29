@@ -1,0 +1,129 @@
+{\rtf1\ansi\deff0
+{\fonttbl
+{\f0 Calibri;}
+{\f1 Cambria;}
+}
+\viewkind4\uc1
+\pard\sa220\sl276\slmult1\f0\fs22
+\b Umbraco backend-anbefaling til nyt design\b0\par
+\par
+Det nuv\u00e6?rende setup virker, men det er meget fritekst-baseret. Med det nye design vil det v\u00e6?re mere robust at strukturere datafelterne tydeligere, s\u00e5? badges, datoer, pris og CTA ikke afh\u00e6?nger af manuel indtastning i lange tekstfelter.\par
+\par
+\b 1. Sektions-komponent: "Udvalgte rejser"\b0\par
+Opret en overordnet blok eller sektion til forsiden, som styrer hele rejse-carousel'en.\par
+\par
+Foresl\u00e5?ede felter:\par
+- Titel\par
+- Valgte rejser\par
+- Maks. antal kort (valgfrit)\par
+- Vis carousel / slider (valgfrit)\par
+\par
+Det kan med fordel bygges som en Block List eller Block Grid, hvor redakt\u00f8?ren tilf\u00f8?jer flere rejsekort.\par
+\par
+\b 2. Rejsekort-element: "Advert Element / Rejsekort"\b0\par
+Hvert kort b\u00f8?r v\u00e6?re et separat element med strukturerede felter i stedet for samlede fritekstfelter.\par
+\par
+Foresl\u00e5?ede felter:\par
+- Rejse-reference\par
+  Content Picker til den rigtige rejse/node. Link til "Se rejse" kan s\u00e5? komme automatisk herfra.\par
+- Billede\par
+  Media Picker. Bruges som override, hvis man ikke vil vise rejsem\u00e5?lets standardbillede.\par
+- Titel\par
+  Enten automatisk fra rejse eller som override-felt.\par
+- Manchet\par
+  Enten automatisk fra rejse eller som override-felt.\par
+\par
+\b 3. Badges\b0\par
+Badges b\u00f8?r ikke gemmes i samme tekstfelt som \u00f8?vrig information.\par
+\par
+Foresl\u00e5?ede felter:\par
+- Prim\u00e6?r badge\par
+  Dropdown: Ingen / Nyhed\par
+- Status badge\par
+  Dropdown: Ingen / F\u00e5? pladser / Garanteret afrejse\par
+\par
+Farver b\u00f8?r styres automatisk i frontend ud fra valget, fx:\par
+- F\u00e5? pladser = orange\par
+- Garanteret afrejse = bl\u00e5?\par
+\par
+Det sikrer ensartethed og reducerer fejl i backend.\par
+\par
+\b 4. Rejseinfo\b0\par
+Feltet "Ekstra info" b\u00f8?r deles op i mindre felter.\par
+\par
+Foresl\u00e5?ede felter:\par
+- Forplejning\par
+  Dropdown: Halvpension / Helpension / andet\par
+- Max deltagere\par
+  Numerisk felt\par
+- Ekstra label (valgfrit)\par
+  Fx "1 plads tilbage"\par
+\par
+Frontend kan s\u00e5? selv opbygge teksten:\par
+"Halvpension | Max 20 delt."\par
+\par
+\b 5. Varighed og dato\b0\par
+Feltet "Antal dage og dato" b\u00f8?r ikke ligge som fri tekst.\par
+\par
+Foresl\u00e5?ede felter:\par
+- Antal dage\par
+- Startdato\par
+- Slutdato\par
+\par
+Frontend formatterer derefter selv visningen korrekt, fx:\par
+"8 dage | 30. maj til 6. juni"\par
+\par
+Det giver bedre validering og g\u00f8?r senere design\u00e6?ndringer lettere.\par
+\par
+\b 6. Pris\b0\par
+Pris b\u00f8?r v\u00e6?re struktureret og ikke ligge som fri tekst.\par
+\par
+Foresl\u00e5?ede felter:\par
+- Prisbel\u00f8?b\par
+  Numerisk felt\par
+- Valuta\par
+  Default: kr.\par
+\par
+Frontend kan s\u00e5? selv vise:\par
+"12.990 kr."\par
+\par
+\b 7. CTA\b0\par
+CTA b\u00f8?r v\u00e6?re s\u00e5? enkel som muligt.\par
+\par
+Foresl\u00e5?ede felter:\par
+- CTA-tekst\par
+  Default: Se rejse\par
+- Link\par
+  Hentes automatisk fra rejse-referencen\par
+\par
+\b 8. Det vigtigste at \u00e6?ndre fra nuv\u00e6?rende setup\b0\par
+- "Ekstra info" skal ikke v\u00e6?re \u00e9?t frit tekstfelt\par
+- "Antal dage og dato" skal ikke v\u00e6?re \u00e9?t frit tekstfelt\par
+- "Pris" skal ikke v\u00e6?re fri tekst\par
+- Badge-tekster skal v\u00e6?re egne felter\par
+- Link til rejse b\u00f8?r komme fra en relation, ikke manuel tekst\par
+\par
+\b 9. Anbefalet redakt\u00f8?rflow\b0\par
+Redakt\u00f8?ren v\u00e6?lger en rejse, og kortet henter automatisk:\par
+- Titel\par
+- Manchet\par
+- Link\par
+- Pris\par
+- Billede\par
+- Datoer\par
+\par
+Kun ved behov skal redakt\u00f8?ren kunne overstyre:\par
+- Billede\par
+- Badges\par
+- Titel\par
+- Manchet\par
+\par
+\b 10. Hvorfor denne struktur er bedre\b0\par
+- Mindre manuel fejlindtastning\par
+- Mere ensartet indhold\par
+- Lettere at vedligeholde\par
+- Nemmere at \u00e6?ndre design senere\par
+- St\u00e6?rkere validering i Umbraco\par
+\par
+Konklusion: Backend b\u00f8?r bygges mere struktureret omkring relationer og mindre fritekst. Det vil passe langt bedre til det nye design og give et mere stabilt redakt\u00f8?rflow.\par
+}
